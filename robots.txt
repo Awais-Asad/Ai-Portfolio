@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://awais-asad.github.io/Ai-Portfolio/sitemap.xml
