@@ -139,9 +139,11 @@ a:hover {
     right: 0;
     bottom: 0;
     width: min(54vw, 790px);
-    background-image: url("./images/me.png");
-    background-size: cover;
-    background-position: 58% center;
+    background-image:
+        linear-gradient(90deg, #0d1c15 0%, rgba(13, 28, 21, 0.88) 12%, rgba(13, 28, 21, 0.18) 34%, rgba(13, 28, 21, 0) 52%),
+        url("./images/me.png");
+    background-size: 100% 100%, cover;
+    background-position: center, 64% center;
     z-index: 0;
 }
 
@@ -181,6 +183,10 @@ a:hover {
     font-size: clamp(42px, 7vw, 82px);
     line-height: 0.98;
     letter-spacing: 0;
+}
+
+.hero h1 span {
+    display: block;
 }
 
 .hero-copy {
