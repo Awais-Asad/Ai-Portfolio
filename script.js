@@ -1,6 +1,23 @@
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        document.body.classList.toggle("nav-open", isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
     });
-});
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("open");
+            document.body.classList.remove("nav-open");
+            menuToggle.setAttribute("aria-expanded", "false");
+        });
+    });
+}
+
+const year = document.querySelector("#year");
+if (year) {
+    year.textContent = new Date().getFullYear();
+}
